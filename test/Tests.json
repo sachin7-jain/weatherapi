@@ -1,0 +1,22 @@
+{
+    "auto200": [
+        {
+            "apiDescName": "/weather",
+            "apiPath": "/weather",
+            "reqBody": {
+            }
+        },
+        {
+            "apiDescName": "/weather/cities",
+            "apiPath": "/weather/cities",
+            "reqBody": {
+                "example": [
+                    "DE",
+                    "London"
+                  ]
+            }
+        }
+    ],
+    "manual200": [],
+    "autoTests": []
+}

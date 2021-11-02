@@ -1,0 +1,226 @@
+{
+    "info": {
+      "description": "Founder and Lighting Demo Project",
+      "title": "Founder and Lighting",
+      "version": "1.0.0"
+    },
+    "host": "localhost:3500",
+    "basePath": "/",
+    "produces": [
+      "application/json"
+    ],
+    "schemes": [
+      "http"
+    ],
+    "swagger": "2.0",
+    "paths": {   
+      "/weather": {
+        "get": {
+          "summary": "API to get weather of London",
+          "parameters": [
+          ],
+          "description": "",
+          "tags": [
+            "Weather Controller"
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful operation",
+              "schema": {
+                "$ref": "#/definitions/GlobalResponse"
+              }
+            },
+            "401": {
+              "description": "Unauthorized",
+              "schema": {
+                "$ref": "#/definitions/GlobalResponse"
+              }
+            },
+            "403": {
+              "description": "Forbidden",
+              "schema": {
+                "$ref": "#/definitions/GlobalResponse"
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "schema": {
+                "$ref": "#/definitions/GlobalResponse"
+              }
+            },
+            "500": {
+              "description": "Error",
+              "schema": {
+                "$ref": "#/definitions/GlobalResponse"
+              }
+            }
+          }
+        }
+      },
+      "/weather/cities": {
+        "post":{
+          "summary": "API to get weather of array of cities",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "description": "",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/cities"
+              }
+            }
+          ],
+          "description": "",
+          "tags": [
+            "Weather Controller"
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful operation",
+              "schema": {
+                "$ref": "#/definitions/GlobalResponse"
+              }
+            },
+            "401": {
+              "description": "Unauthorized",
+              "schema": {
+                "$ref": "#/definitions/GlobalResponse"
+              }
+            },
+            "403": {
+              "description": "Forbidden",
+              "schema": {
+                "$ref": "#/definitions/GlobalResponse"
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "schema": {
+                "$ref": "#/definitions/GlobalResponse"
+              }
+            },
+            "500": {
+              "description": "Error",
+              "schema": {
+                "$ref": "#/definitions/GlobalResponse"
+              }
+            }
+          }
+        }
+      },
+      "/health": {
+        "get": {
+            "summary": "API to check the status of the application",
+            "tags": [
+                "Health Controller"
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful operation",
+                "schema": {
+                  "$ref": "#/definitions/GlobalResponse"
+                }
+              },
+              "401": {
+                "description": "Unauthorized",
+                "schema": {
+                  "$ref": "#/definitions/GlobalResponse"
+                }
+              },
+              "403": {
+                "description": "Forbidden",
+                "schema": {
+                  "$ref": "#/definitions/GlobalResponse"
+                }
+              },
+              "404": {
+                "description": "Not Found",
+                "schema": {
+                  "$ref": "#/definitions/GlobalResponse"
+                }
+              },
+              "500": {
+                "description": "Error",
+                "schema": {
+                  "$ref": "#/definitions/GlobalResponse"
+                }
+              }
+            }
+        }
+    }
+  },
+    "definitions": {
+      "cities": {
+        "required": [],
+        "properties": {
+          "data": {
+            "type": "array",
+            "example": [
+              "DE",
+              "London"
+            ]
+          }
+        }
+      },
+      "GlobalResponse": {
+        "required": [
+          "OPStatus",
+          "data"
+        ],
+        "properties": {
+          "OPStatus": {
+            "$ref": "#/definitions/OPStatus"
+          },
+          "data": {
+            "type": "object",
+            "description": ""
+          }
+        }
+      },
+      "OPStatus": {
+        "required": [
+          "StatusCode",
+          "Status",
+          "Description",
+          "StatusType",
+          "Message"
+        ],
+        "properties": {
+          "StatusCode": {
+            "type": "string",
+            "description": ""
+          },
+          "Status": {
+            "type": "string",
+            "description": ""
+          },
+          "Description": {
+            "type": "string",
+            "description": ""
+          },
+          "StatusType": {
+            "type": "string",
+            "description": ""
+          },
+          "Message": {
+            "type": "string",
+            "description": ""
+          }
+        }
+      }
+    },
+    "responses": {},
+    "parameters": {},
+    "securityDefinitions": {},
+    "tags": [
+      {
+        "name": "Weather Controller",
+        "description": "Weather Controller."
+      },
+      {
+        "name": "Health Controller",
+        "description": "Health Controller"
+      }
+    ]
+  }

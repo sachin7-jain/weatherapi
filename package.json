@@ -1,0 +1,26 @@
+{
+  "name": "fnl_nj_weatherreport",
+  "version": "1.0.0",
+  "description": "Demo Project for founder and lighting",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha --timeout 1000000"
+  },
+  "author": "Sachin Jain",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "get-port": "^5.1.1",
+    "json-refs": "^3.0.15",
+    "request": "^2.88.2",
+    "swagger-ui-express": "^4.1.6",
+    "util": "^0.12.4"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "mocha": "^5.1.0"
+  }
+}

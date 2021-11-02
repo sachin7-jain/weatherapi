@@ -1,0 +1,21 @@
+{
+        "server": {
+            "port": 3500
+          },
+        "appMgmt" :{
+            "getWeather":
+            {
+                "url" : "http://api.openweathermap.org/data/2.5/forecast?",
+                "method":"GET",
+                "cityName" : "London",
+                "api_key" : "858f15fed9292cbe25c341a754c55e45"
+            }
+        },
+        "swagger" :{
+            "host" : "localhost:3500",
+            "basePath" : "/",
+            "schemes" :[
+                "http"
+            ]
+        }
+}
